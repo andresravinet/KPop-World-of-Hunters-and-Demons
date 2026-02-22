@@ -165,7 +165,7 @@ The power of friendship makes them stronger together!
 ## Combat System
 
 ### Turn-Based Battle
-Each battle is Rumi, Mira & Zoey vs silly demons, taking turns:
+Each battle is Rumi, Mira, Zoey & Jinu vs silly demons, taking turns:
 
 **Each character can:**
 - **Attack** — Use their weapon for a sparkly hit
@@ -176,7 +176,7 @@ Each battle is Rumi, Mira & Zoey vs silly demons, taking turns:
 
 ### Battle Flow
 ```
-1. Pick actions for Rumi, Mira, and Zoey
+1. Pick actions for Rumi, Mira, Zoey, and Jinu
 2. The team's actions play out (with fun animations!)
 3. The demons do their silly attacks
 4. Check: Did anyone get too tired? (HP reaches 0 = "needs a rest")
@@ -185,15 +185,35 @@ Each battle is Rumi, Mira & Zoey vs silly demons, taking turns:
 
 ### Kid-Friendly Combat Rules
 - Nobody "dies" — demons **poof into sparkles and confetti** when defeated
-- If Rumi, Mira, or Zoey runs out of HP, they **"need a rest"** and sit out until healed
-- If all three need a rest, the team **"retreats to regroup"** (game over screen with a "Try Again!" button)
+- If a character runs out of HP, they **"need a rest"** and sit out until healed
+- If all four need a rest, the team **"retreats to regroup"** (game over screen with a "Try Again!" button)
 - Enemies are goofy and silly, never scary
 - Victory celebrations include dance animations!
 
 ### Rewards
-- **XP** — Rumi levels up and gets stronger
-- **Items** — Potions, shields, power-ups drop from demons
+- **XP** — The team levels up and gets stronger
+- **Items** — Cookies, potions, and power-ups drop from demons
 - **Spirit Crystals** — Currency to buy upgrades between battles
+
+### Level Celebration!
+
+Every time the team completes a region, they have a **celebration scene** together! This is a special moment after each boss is defeated and the humans in that region are rescued.
+
+| Region Completed | Celebration |
+|-----------------|-------------|
+| **The Shattered Stage** | The team fixes the stage and performs their first concert together in the Demon World! Confetti and sparkles everywhere. |
+| **The Neon Graveyard** | All the dead lights flicker back on — the city lights up in rainbow colors and the team has a dance party in the streets. |
+| **The Echo Caverns** | The caves fill with beautiful harmonies instead of goofy echoes. The team sings together and the cavern glows with music. |
+| **The Frozen Ballroom** | The ice melts into a sparkling dance floor. The team has a big ballroom dance — Jinu nervously asks Rumi to dance (and she says yes!). |
+| **Gwi-ma's Fortress** | The ULTIMATE celebration — all 20 rescued humans join the team for a huge KPop concert. Gwi-ma's castle transforms into a giant concert stage! |
+
+**Celebration features:**
+- Animated scene with all four characters together
+- The rescued humans cheer in the background
+- Fun dialogue between Rumi, Mira, Zoey, and Jinu
+- A special friendship moment each time (group hug, high-fives, silly photos)
+- Jinu tries to act cool but can't help smiling
+- A "Level Complete!" banner with stars and stats
 
 ---
 
