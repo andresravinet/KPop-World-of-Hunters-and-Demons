@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KPop Demon Hunters</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/battle.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <div id="game-container">
+
+        <!-- TITLE SCREEN -->
+        <div id="screen-title" class="screen active">
+            <div class="title-sparkles"></div>
+            <h1 class="game-title">
+                <span class="title-kpop">KPop</span>
+                <span class="title-demon">Demon Hunters</span>
+            </h1>
+            <p class="title-subtitle">Save the world with the power of music & friendship!</p>
+            <div class="title-characters">
+                <span class="title-char" data-char="rumi">🎤</span>
+                <span class="title-char" data-char="mira">🎀</span>
+                <span class="title-char" data-char="zoey">🎧</span>
+                <span class="title-char" data-char="jinu">🎸</span>
+            </div>
+            <button class="btn btn-play" onclick="Game.startIntro()">✨ Start Adventure! ✨</button>
+            <button class="btn btn-load" onclick="Game.loadGame()">Continue Game</button>
+        </div>
+
+        <!-- STORY INTRO SCREEN -->
+        <div id="screen-intro" class="screen">
+            <div class="intro-box">
+                <div id="intro-portrait" class="intro-portrait"></div>
+                <p id="intro-text" class="intro-text"></p>
+                <button class="btn btn-next" onclick="Game.nextIntro()">Next ▶</button>
+            </div>
+        </div>
+
+        <!-- TEAM SCREEN (Character Cards) -->
+        <div id="screen-team" class="screen">
+            <h2 class="screen-title">✨ Meet the Team! ✨</h2>
+            <div id="team-cards" class="team-cards"></div>
+            <button class="btn btn-play" onclick="Game.showMap()">Enter the Demon World! 🌀</button>
+        </div>
+
+        <!-- WORLD MAP SCREEN -->
+        <div id="screen-map" class="screen">
+            <h2 class="screen-title">🗺️ The Demon World</h2>
+            <div class="map-status-bar">
+                <span id="map-rescued">👥 Rescued: 0/20</span>
+                <span id="map-crystals">💎 Crystals: 0</span>
+            </div>
+            <div id="world-map" class="world-map"></div>
+            <button class="btn btn-save" onclick="Game.saveGame()">💾 Save Game</button>
+        </div>
+
+        <!-- REGION SCREEN (Pre-battle area) -->
+        <div id="screen-region" class="screen">
+            <h2 id="region-name" class="screen-title"></h2>
+            <p id="region-desc" class="region-desc"></p>
+            <div id="region-progress" class="region-progress"></div>
+            <div id="region-actions" class="region-actions">
+                <button class="btn btn-battle" onclick="Game.startBattle()">⚔️ Fight Demons!</button>
+                <button class="btn btn-boss" id="btn-boss" onclick="Game.startBossBattle()" style="display:none">👹 Challenge Boss!</button>
+                <button class="btn btn-back" onclick="Game.showMap()">← Back to Map</button>
+            </div>
+        </div>
+
+        <!-- BATTLE SCREEN -->
+        <div id="screen-battle" class="screen">
+            <div class="battle-scene">
+                <div id="enemy-area" class="enemy-area"></div>
+                <div class="battle-divider">⚡ VS ⚡</div>
+                <div id="team-area" class="team-area"></div>
+            </div>
+            <div id="battle-log" class="battle-log"></div>
+            <div id="battle-menu" class="battle-menu">
+                <h3 id="battle-turn-label" class="turn-label"></h3>
+                <div id="battle-actions" class="battle-actions"></div>
+            </div>
+        </div>
+
+        <!-- ABILITY TARGET SCREEN (overlay) -->
+        <div id="target-overlay" class="overlay" style="display:none">
+            <div class="overlay-box">
+                <h3 id="target-title">Choose a target:</h3>
+                <div id="target-buttons"></div>
+                <button class="btn btn-back" onclick="Battle.cancelTarget()">← Back</button>
+            </div>
+        </div>
+
+        <!-- BATTLE VICTORY SCREEN -->
+        <div id="screen-victory" class="screen">
+            <h2 class="victory-title">✨ Victory! ✨</h2>
+            <div id="victory-details" class="victory-details"></div>
+            <button class="btn btn-play" onclick="Game.afterBattle()">Continue ▶</button>
+        </div>
+
+        <!-- BATTLE DEFEAT SCREEN -->
+        <div id="screen-defeat" class="screen">
+            <h2 class="defeat-title">Time to Regroup! 💪</h2>
+            <p class="defeat-text">The team needs a rest... but don't give up!</p>
+            <button class="btn btn-play" onclick="Game.showMap()">Try Again! ✨</button>
+        </div>
+
+        <!-- RESCUE SCREEN -->
+        <div id="screen-rescue" class="screen">
+            <h2 class="rescue-title">🎉 Rescue! 🎉</h2>
+            <div id="rescue-details" class="rescue-details"></div>
+            <button class="btn btn-play" onclick="Game.afterRescue()">Hooray! ▶</button>
+        </div>
+
+        <!-- CELEBRATION SCREEN -->
+        <div id="screen-celebration" class="screen">
+            <div class="celebration-scene">
+                <h2 class="celebration-title">🎊 Level Complete! 🎊</h2>
+                <div id="celebration-text" class="celebration-text"></div>
+                <div class="celebration-characters">
+                    <span class="celeb-char bounce-1">🎤</span>
+                    <span class="celeb-char bounce-2">🎀</span>
+                    <span class="celeb-char bounce-3">🎧</span>
+                    <span class="celeb-char bounce-4">🎸</span>
+                </div>
+                <div id="celebration-stats" class="celebration-stats"></div>
+                <button class="btn btn-play" onclick="Game.afterCelebration()">Continue Adventure! ✨</button>
+            </div>
+        </div>
+
+        <!-- ENDING SCREEN -->
+        <div id="screen-ending" class="screen">
+            <div class="ending-scene">
+                <h1 class="ending-title">🌟 You Did It! 🌟</h1>
+                <div id="ending-text" class="ending-text"></div>
+                <div class="ending-characters">
+                    <span class="celeb-char bounce-1">🎤</span>
+                    <span class="celeb-char bounce-2">🎀</span>
+                    <span class="celeb-char bounce-3">🎧</span>
+                    <span class="celeb-char bounce-4">🎸</span>
+                </div>
+                <h2 class="ending-thanks">Thank you for playing!</h2>
+                <button class="btn btn-play" onclick="Game.showTitle()">Play Again! ✨</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/characters.js"></script>
+    <script src="js/demons.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/battle.js"></script>
+    <script src="js/world.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
