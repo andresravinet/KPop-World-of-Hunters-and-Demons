@@ -90,7 +90,7 @@ Demons are silly and mischievous, not scary! When defeated, they poof into spark
 
 ---
 
-## Allies: Mira & Zoey
+## Allies: Mira, Zoey & Jinu
 
 Rumi doesn't do this alone — her two best friends are with her from the start!
 
@@ -119,7 +119,7 @@ Rumi doesn't do this alone — her two best friends are with her from the start!
 | **Name** | Zoey |
 | **Role** | DJ / Healer |
 | **Weapon** | Magic Headphones (drops healing beats and sound waves) |
-| **Personality** | Smart, funny, always has a plan (and a snack) |
+| **Personality** | Smart, funny, always has a plan |
 | **Base Stats** | HP: 85, Attack: 8, Defense: 14, Speed: 10, Spirit: 22 |
 
 **Zoey's Abilities:**
@@ -221,12 +221,12 @@ Every time the team completes a region, they have a **celebration scene** togeth
 
 ### Phase 1: Core Foundation
 - [ ] Project setup (HTML/CSS/JS file structure)
-- [ ] Title screen — "KPop Demon Hunters" with dark/neon KPop aesthetic
+- [ ] Title screen — "KPop Demon Hunters" with bright, kid-friendly KPop aesthetic
 - [ ] Story intro sequence (text-based, sets up Rumi's mission)
 - [ ] Basic game UI (HP bar, Spirit bar, menus)
 
-### Phase 2: Rumi & The First Region
-- [ ] Rumi's character stats, abilities, and leveling system
+### Phase 2: The Team & The First Region
+- [ ] All four characters' stats, abilities, and leveling system
 - [ ] The Shattered Stage — first region with demon encounters
 - [ ] Turn-based combat system (Attack, Ability, Item, Defend)
 - [ ] First boss fight: Mok-sori (Demon of Silence)
@@ -234,14 +234,14 @@ Every time the team completes a region, they have a **celebration scene** togeth
 
 ### Phase 3: Full Demon World
 - [ ] Remaining 4 regions with unique enemies and bosses
-- [ ] Ally system — rescued humans provide battle support
 - [ ] World map to navigate between regions
+- [ ] Level celebration scenes after each region
 - [ ] Save/load game progress (localStorage)
 
 ### Phase 4: Gwi-ma & Endgame
 - [ ] Gwi-ma's Fortress — final region
 - [ ] Multi-phase final boss battle against Gwi-ma
-- [ ] Ending sequence — Rumi saves the day
+- [ ] Ending sequence — Rumi, Mira, Zoey & Jinu save the day together
 - [ ] Victory screen with stats (humans rescued, battles won, etc.)
 
 ### Phase 5: Polish & Extras
@@ -310,8 +310,8 @@ KPop-World-of-Hunters-and-Demons/
 
 ## How to Build It (Step by Step)
 
-1. **Title screen** — Get "KPop Demon Hunters" on screen with the dark/neon look
-2. **Rumi** — Create her stats, show her character card
+1. **Title screen** — Get "KPop Demon Hunters" on screen with the bright, kid-friendly KPop look
+2. **The team** — Create Rumi, Mira, Zoey & Jinu stats and show their character cards
 3. **First battle** — Fight a basic demon with the turn-based system
 4. **First region** — Complete The Shattered Stage with boss + rescues
 5. **Expand the world** — Add remaining regions and the world map
