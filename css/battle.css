@@ -1,0 +1,283 @@
+/* ===========================
+   Battle Screen Styles
+   =========================== */
+
+#screen-battle {
+    padding: 10px;
+    gap: 10px;
+    justify-content: flex-start;
+    padding-top: 20px;
+}
+
+.battle-scene {
+    width: 100%;
+    max-width: 700px;
+}
+
+/* Enemy Area */
+.enemy-area {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    min-height: 100px;
+    padding: 15px;
+}
+
+.enemy-sprite {
+    background: rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 12px 18px;
+    text-align: center;
+    border: 2px solid rgba(255,107,157,0.3);
+    transition: all 0.3s ease;
+    min-width: 100px;
+}
+
+.enemy-sprite.defeated {
+    opacity: 0;
+    transform: scale(0) rotate(360deg);
+    transition: all 0.6s ease;
+}
+
+.enemy-emoji {
+    font-size: 2.5em;
+    display: block;
+}
+
+.enemy-name {
+    font-family: 'Fredoka One', cursive;
+    font-size: 0.8em;
+    color: var(--coral);
+    margin: 4px 0;
+}
+
+.enemy-hp-bar {
+    width: 80px;
+    height: 8px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.enemy-hp-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--coral), var(--pink));
+    border-radius: 8px;
+    transition: width 0.3s ease;
+}
+
+/* Battle Divider */
+.battle-divider {
+    text-align: center;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.2em;
+    color: var(--gold);
+    padding: 5px;
+    text-shadow: var(--glow-gold);
+}
+
+/* Team Area */
+.team-area {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    padding: 10px;
+}
+
+.team-member {
+    background: rgba(255,255,255,0.1);
+    border-radius: 14px;
+    padding: 10px;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.team-member.active-turn {
+    border-color: var(--gold);
+    box-shadow: var(--glow-gold);
+    background: rgba(255,255,255,0.2);
+}
+
+.team-member.resting {
+    opacity: 0.4;
+    filter: grayscale(0.7);
+}
+
+.team-member.defending {
+    border-color: var(--blue);
+    box-shadow: 0 0 15px rgba(96, 165, 250, 0.4);
+}
+
+.member-emoji {
+    font-size: 2em;
+    display: block;
+}
+
+.member-name {
+    font-family: 'Fredoka One', cursive;
+    font-size: 0.75em;
+    margin: 3px 0;
+}
+
+.member-name.rumi-name { color: var(--pink); }
+.member-name.mira-name { color: var(--gold); }
+.member-name.zoey-name { color: var(--blue); }
+.member-name.jinu-name { color: var(--purple); }
+
+/* HP Bar (in battle) */
+.member-hp-bar, .member-sp-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 3px 0;
+}
+
+.member-hp-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4ADE80, var(--mint));
+    border-radius: 8px;
+    transition: width 0.4s ease;
+}
+
+.member-sp-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--purple), var(--pink));
+    border-radius: 8px;
+    transition: width 0.4s ease;
+}
+
+.member-hp-text, .member-sp-text {
+    font-size: 0.6em;
+    font-weight: 800;
+    color: rgba(255,255,255,0.8);
+}
+
+/* Battle Log */
+.battle-log {
+    width: 100%;
+    max-width: 700px;
+    max-height: 80px;
+    overflow-y: auto;
+    background: rgba(0,0,0,0.3);
+    border-radius: 12px;
+    padding: 8px 12px;
+    font-size: 0.85em;
+}
+
+.battle-log p {
+    margin: 3px 0;
+    padding: 2px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.log-player { color: var(--mint); }
+.log-enemy { color: var(--coral); }
+.log-heal { color: var(--gold); }
+.log-info { color: var(--purple); }
+.log-special { color: var(--pink); font-weight: 700; }
+
+/* Battle Menu */
+.battle-menu {
+    width: 100%;
+    max-width: 700px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 12px;
+    text-align: center;
+}
+
+.turn-label {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1em;
+    margin-bottom: 8px;
+    color: var(--gold);
+}
+
+.battle-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+}
+
+/* Ability sub-menu */
+.ability-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.ability-btn {
+    background: linear-gradient(135deg, var(--purple), #7C3AED);
+    color: white;
+    font-family: 'Fredoka One', cursive;
+    font-size: 0.9em;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+}
+
+.ability-btn:hover { transform: scale(1.02); filter: brightness(1.1); }
+.ability-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.ability-btn .ability-cost {
+    float: right;
+    font-size: 0.8em;
+    opacity: 0.8;
+}
+
+/* Item sub-menu */
+.item-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.item-btn {
+    background: linear-gradient(135deg, var(--mint), #34D399);
+    color: var(--dark);
+    font-family: 'Fredoka One', cursive;
+    font-size: 0.9em;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+}
+
+.item-btn:hover { transform: scale(1.02); filter: brightness(1.1); }
+.item-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.item-btn .item-count {
+    float: right;
+    font-size: 0.8em;
+}
+
+/* Responsive battle */
+@media (max-width: 600px) {
+    .team-area {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .enemy-area {
+        gap: 8px;
+    }
+    .enemy-sprite {
+        min-width: 80px;
+        padding: 8px 12px;
+    }
+}
